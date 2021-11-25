@@ -4,7 +4,8 @@ import { HomeView, AboutView } from "../views";
 export default [
   {
     ...App,
-    routes: [
+    path: "/",
+    children: [
       {
         ...HomeView,
         //layout: LandLayout,

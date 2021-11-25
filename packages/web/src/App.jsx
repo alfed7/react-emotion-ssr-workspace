@@ -5,13 +5,14 @@ import { connect } from "react-redux";
 import { theme } from "./theme";
 import { HelmetProvider } from "react-helmet-async";
 import HelmetHead from "components/HelmetHead";
-import { renderRoutes } from "./components/layout";
+//import { renderRoutes } from "./components/layout";
+import { Outlet } from "react-router";
 
-const App = ({ route, staticContext }) => {
+const App = ({ staticContext }) => {
   return (
     <HelmetProvider context={staticContext}>
       {<HelmetHead title="React Emotion SSR Workspace 1" />}
-      <ThemeProvider theme={theme}>{renderRoutes(route.routes)}</ThemeProvider>
+      <ThemeProvider theme={theme}><Outlet/></ThemeProvider>
     </HelmetProvider>
   );
 };

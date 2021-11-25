@@ -8,7 +8,7 @@ import path from "path";
 import parseUrl from "parseurl";
 
 import { createStore, renderHtml } from "./ssr";
-import { matchRoutes } from "react-router-config";
+import { matchRoutes } from "react-router";
 import { routes } from "@resw/web";
 
 const parseResult = dotenv.config();
@@ -22,10 +22,17 @@ const publicDir = path.resolve(__dirname);
 const ssr = (req, res, next) => {
   const url_parts = parseUrl(req);
   const urlSearch = url_parts ? url_parts.search : "";
+  const urlPath = url_parts ? url_parts.pathname : "";
 
   const store = createStore(req, res);
 
-  const promises = matchRoutes(routes, req.path)
+  const matches = matchRoutes(routes, urlPath);
+  if (!matches) {
+    res.statusCode = 404;
+    next("Not found");
+    return;
+  }
+  const promises = matches
     .map(({ route }) => {
       return route.loadData ? route.loadData(store, urlSearch) : null;
     })

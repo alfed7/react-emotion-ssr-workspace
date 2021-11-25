@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 import { createStore, applyMiddleware } from "redux";
 import { Provider } from "react-redux";
 import routes from "./routes";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router, Routes } from "react-router-dom";
 import reducers from "./redux/reducers";
 import thunkMiddleware from "redux-thunk";
 import { createLogger } from "redux-logger";
@@ -20,7 +20,7 @@ const render = window.INITIAL_STATE ? ReactDOM.hydrate : ReactDOM.render;
 
 render(
   <Provider store={store}>
-    <Router>{renderRoutes(routes)}</Router>
+    <Router><Routes>{renderRoutes(routes)}</Routes></Router>
   </Provider>,
   document.getElementById("app")
 );

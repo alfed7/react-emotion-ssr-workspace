@@ -35,7 +35,7 @@ const config = (env, startArgs) => {
       filename: "bundle.js",
     },
     devServer: {
-      contentBase: path.join(__dirname, targetFolder),
+      static: path.join(__dirname, targetFolder),
       compress: true,
       port: 4000,
     },

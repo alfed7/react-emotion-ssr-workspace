@@ -74,7 +74,7 @@ const config = (env, startArgs) => {
     ],
     plugins: [
       new CopyPlugin({
-        patterns: [{ from: ".env.prod", to: ".env" }],
+        patterns: [{ toType: "file", from: ".env.prod", to: ".env" }],
       }),
     ],
   };
