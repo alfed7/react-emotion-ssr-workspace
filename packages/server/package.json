@@ -1,13 +1,13 @@
 {
   "name": "@resw/server",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React Emotion SSR with yarn workspace starter.",
   "main": "../../build/serverbundle.js",
   "repository": "https://github.com/alfed7/react-emotion-ssr-workspace.git",
   "author": "Alexander Fedorenko",
   "license": "MIT",
   "dependencies": {
-    "@resw/web": "^0.1.0",
+    "@resw/web": "^0.1.1",
     "@emotion/css": "^11.5.0",
     "@emotion/react": "^11.6.0",
     "@emotion/styled": "^11.6.0",

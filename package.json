@@ -1,6 +1,6 @@
 {
   "name": "react-emotion-ssr-workspace",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React Emotion SSR with yarn workspace starter.",
   "repository": "https://github.com/alfed7/react-emotion-ssr-workspace.git",
   "author": "Alexander Fedorenko",

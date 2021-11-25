@@ -1,6 +1,6 @@
 {
   "name": "@resw/web",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "React Emotion SSR with yarn workspace starter.",
   "main": "build/index.js",
   "module": "src/module.jsx",
@@ -22,7 +22,7 @@
     "redux-thunk": "^2.4.0"
   },
   "devDependencies": {
-    "@resw/core": "^0.1.0",
+    "@resw/core": "^0.1.1",
     "@babel/core": "^7.16.0",
     "@babel/plugin-transform-runtime": "^7.16.4",
     "@babel/preset-env": "^7.16.4",
