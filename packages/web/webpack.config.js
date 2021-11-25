@@ -1,5 +1,6 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 const targetFolder = "../../build/public";
 const config = (env, startArgs) => {
@@ -39,7 +40,10 @@ const config = (env, startArgs) => {
       compress: true,
       port: 4000,
     },
-    plugins: [new HtmlWebpackPlugin({ template: "src/assets/index.html" })],
+    plugins: [
+      new HtmlWebpackPlugin({ template: "src/assets/index.html" }),
+      new ESLintPlugin()
+    ],
   };
 };
 

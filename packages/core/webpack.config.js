@@ -1,4 +1,5 @@
 const path = require("path");
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 const config = (env, startArgs) => {
   const isDevelopment = startArgs.mode === "development";
@@ -36,6 +37,9 @@ const config = (env, startArgs) => {
       compress: true,
       port: 4000,
     },
+    plugins: [
+      new ESLintPlugin(),
+    ],
   };
 };
 

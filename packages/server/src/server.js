@@ -38,7 +38,7 @@ const ssr = (req, res, next) => {
     })
     .map((promise) => {
       if (promise) {
-        return new Promise((resolve, reject) => {
+        return new Promise((resolve) => {
           promise.then(resolve).catch(resolve);
         });
       }

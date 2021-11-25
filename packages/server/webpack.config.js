@@ -1,6 +1,7 @@
 const path = require("path");
 const nodeExternals = require("webpack-node-externals");
 const CopyPlugin = require("copy-webpack-plugin");
+const ESLintPlugin = require('eslint-webpack-plugin');
 
 const config = (env, startArgs) => {
   const isDevelopment = startArgs.mode === "development";
@@ -76,6 +77,7 @@ const config = (env, startArgs) => {
       new CopyPlugin({
         patterns: [{ toType: "file", from: ".env.prod", to: ".env" }],
       }),
+      new ESLintPlugin(),
     ],
   };
 };
